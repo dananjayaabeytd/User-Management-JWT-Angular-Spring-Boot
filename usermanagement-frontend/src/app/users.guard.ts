@@ -1,5 +1,6 @@
-import { CanActivateFn } from '@angular/router';
+import { CanActivateFn,Router } from '@angular/router';
+import { UsersService } from './users.service';
+import { inject } from '@angular/core';
 
-export const usersGuard: CanActivateFn = (route, state) => {
-  return true;
-};
+
+
