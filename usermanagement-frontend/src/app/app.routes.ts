@@ -9,9 +9,9 @@ import { UserslistComponent } from './userlist/userlist.component';
 export const routes: Routes = [
 
     {path: 'login', component: LoginComponent},
-    {path: 'register', component: RegisterComponent},
-    {path: 'profile', component: ProfileComponent},
-    {path: 'update/:id', component: UpdateuserComponent},
+    {path: 'register', component: RegisterComponent, canActivate: [adminGuard]},
+    {path: 'profile', component: ProfileComponent, canActivate: [usersGuard]},
+    {path: 'update/:id', component: UpdateuserComponent, canActivate: [adminGuard]},
     {path: 'users', component: UserslistComponent, canActivate:[adminGuard]},
     {path: '**', component: LoginComponent},
     {path: '', redirectTo: '/login', pathMatch: 'full'},
